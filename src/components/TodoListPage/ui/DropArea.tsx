@@ -14,12 +14,16 @@ const DropArea = ({ onDrop }: propsType) => {
 
   return (
     <section
-      onDragLeave={() => setShowDrop(false)}
       onDrop={handleDrop}
       onDragOver={(e) => e.preventDefault()}
+      // className="border border-red-700"
     >
       <div onDragEnter={() => setShowDrop(true)} className="h-1"></div>
       <section
+        onDragEnter={() => setShowDrop(true)}
+        onDragLeave={() => setShowDrop(false)}
+        onDrop={handleDrop}
+        onDragOver={(e) => e.preventDefault()}
         className={`w-full min-h-24 p-3 border border-gray-700 border-dashed rounded transition-all duration-300 opacity-20 ${
           !showDrop && 'hidden opacity-0'
         }`}

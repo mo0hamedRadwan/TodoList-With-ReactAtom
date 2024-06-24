@@ -1,3 +1,5 @@
+import icons from './icons';
+
 export const tags = [
   { tagName: 'HTML', backgroundColor: '#fda821' },
   { tagName: 'CSS', backgroundColor: '#15d4c8' },
@@ -6,7 +8,7 @@ export const tags = [
 ];
 
 export const columns = [
-  { columnName: 'Todo', icon: './src/assets/icons/todo.png', todos: [] },
-  { columnName: 'Doing', icon: './src/assets/icons/doing.png', todos: [] },
-  { columnName: 'Done', icon: './src/assets/icons/done.png', todos: [] },
+  { columnName: 'Todo', icon: icons.todoIcon, todos: [] },
+  { columnName: 'Doing', icon: icons.doingIcon, todos: [] },
+  { columnName: 'Done', icon: icons.doneIcon, todos: [] },
 ];

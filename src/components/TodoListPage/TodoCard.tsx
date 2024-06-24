@@ -19,6 +19,7 @@ const TodoCard = ({ id, title, tags }: propsType) => {
   };
 
   const handleUpdateTodo = () => {
+    if (newTitle.trim().length === 0) return;
     setIsUpdated(false);
     todoListAtom.update_todo(id, newTitle);
   };
@@ -33,9 +34,9 @@ const TodoCard = ({ id, title, tags }: propsType) => {
       {isUpdated ? (
         <input
           type="text"
-          value={title}
+          value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
-          className=""
+          className="border-b border-red-400 focus:outline-none"
         />
       ) : (
         <h3 className="text-lg">{title}</h3>

@@ -31,11 +31,13 @@ const TodoForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    todoListAtom.add_todo({
-      ...todoData,
-      id: Math.random(),
-      title: todoData.title.trim(),
-    });
+    if (todoData.title.trim().length) {
+      todoListAtom.add_todo({
+        ...todoData,
+        id: Math.random(),
+        title: todoData.title.trim(),
+      });
+    }
   };
 
   return (
